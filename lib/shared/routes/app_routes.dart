@@ -1,12 +1,10 @@
-import 'package:get/get.dart';
-import 'package:vip_app/modules/home/home_page.dart';
+import '/modules/home/home_module.dart';
 
 class AppRoutes {
+  AppRoutes._();
+
+  static const initialRoute = HomeModule.route;
   static final routes = [
-    GetPage(
-      name: '/',
-      page: () => const HomePage(),
-      transition: Transition.fade,
-    ),
+    ...HomeModule.pages,
   ];
 }
