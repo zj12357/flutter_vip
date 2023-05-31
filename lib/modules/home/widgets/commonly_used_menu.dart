@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
-
-import '../../../shared/styles/text_style.dart';
+import '/shared/styles/text_style.dart';
 
 class CommonlyUsedMenu extends StatefulWidget {
   const CommonlyUsedMenu({Key? key}) : super(key: key);
@@ -24,7 +23,7 @@ class _CommonlyUsedMenuState extends State<CommonlyUsedMenu> {
         ),
         Text(
           'OK111',
-          style: TextStyle(fontSize: 16, color: TextStyles.whiteColor),
+          style: TextStyle(fontSize: 12, color: TextStyles.whiteColor),
         ),
       ],
     );
