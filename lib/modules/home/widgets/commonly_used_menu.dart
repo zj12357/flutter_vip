@@ -31,29 +31,17 @@ class _CommonlyUsedMenuState extends State<CommonlyUsedMenu> {
       padding: const EdgeInsets.symmetric(horizontal: 10.0),
       child: Container(
         color: BackgroundStyles.secondaryBackground.withOpacity(0.5),
-        child: SizedBox(
-          height: 75,
-          width: double.infinity,
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: menuList.length,
-            itemBuilder: (context, index) {
-              final item = menuList[index];
-              return GestureDetector(
-                onTap: () {
-                  // 处理导航菜单项的点击事件
-                  // 根据需要执行相应的导航操作
-                  print('Tapped ${item.label}');
-                },
-                child: Expanded(
-                  child: Container(
-                    padding: const EdgeInsets.all(8),
-                    child: CommonlyUsedMenuItem(menuItemProps: item),
-                  ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            for (int index = 0; index < menuList.length; index++)
+              Expanded(
+                child: Container(
+                  padding: const EdgeInsets.all(8),
+                  child: CommonlyUsedMenuItem(menuItemProps: menuList[index]),
                 ),
-              );
-            },
-          ),
+              ),
+          ],
         ),
       ),
     );
