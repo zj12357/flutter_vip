@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'home_controller.dart';
+import 'package:vip_app/modules/home/widgets/commonly_used_menu.dart';
+import '/shared/styles/background_style.dart';
+import '/modules/home/widgets/topbar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -10,26 +11,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final HomeController _controller = Get.put(HomeController());
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home Page'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Obx(() => Text('Count: ${_controller.count.value}')),
-            ElevatedButton(
-              onPressed: _controller.increment,
-              child: const Text('累加'),
-            ),
-          ],
-        ),
-      ),
+    return const Scaffold(
+      appBar: Topbar(),
+      backgroundColor: BackgroundStyles.primaryBackground,
+      body: Column(children: [CommonlyUsedMenu()]),
     );
   }
 }

@@ -7,14 +7,16 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: '盈乐贵宾会',
-      theme: ThemeData(
-        // 定义应用程序的主题
-        primarySwatch: Colors.blue,
+    return SafeArea(
+      child: GetMaterialApp(
+        title: '盈乐贵宾会',
+        theme: ThemeData(
+          // 定义应用程序的主题
+          primarySwatch: Colors.blue,
+        ),
+        initialRoute: AppRoutes.initialRoute, // 设置初始路由
+        getPages: AppRoutes.routes, // 配置路由
       ),
-      initialRoute: AppRoutes.initialRoute, // 设置初始路由
-      getPages: AppRoutes.routes, // 配置路由
     );
   }
 }
