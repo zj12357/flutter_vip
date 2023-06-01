@@ -39,10 +39,10 @@ class Avatar extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        const SizedBox(width: 10),
+        const SizedBox(width: 8),
         const Text(
           'OK111',
-          style: TextStyle(fontSize: 16, color: TextStyles.whiteColor),
+          style: TextStyle(fontSize: 14, color: TextStyles.whiteColor),
         ),
       ],
     );

@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 import '/shared/styles/background_style.dart';
 import '/shared/styles/text_style.dart';
@@ -18,10 +18,13 @@ class CommonlyUsedMenu extends StatefulWidget {
 
 class _CommonlyUsedMenuState extends State<CommonlyUsedMenu> {
   final List<NavItem> menuList = [
-    NavItem(icon: 'assets/images/icon/transfer_icon.png', label: 'Home'),
-    NavItem(icon: 'assets/images/icon/transfer_icon.png', label: 'Search'),
-    NavItem(icon: 'assets/images/icon/transfer_icon.png', label: 'Favorites'),
-    NavItem(icon: 'assets/images/icon/transfer_icon.png', label: 'Settings'),
+    NavItem(icon: 'assets/images/icon/transfer_icon.png', label: '转账'),
+    NavItem(
+        icon: 'assets/images/icon/appointment_code_icon.png', label: '预约出码'),
+    NavItem(
+        icon: 'assets/images/icon/appointment_withdrawal_icon.png',
+        label: '预约取款'),
+    NavItem(icon: 'assets/images/icon/receipt_code_icon.png', label: '收款码'),
   ];
 
   @override
@@ -30,7 +33,12 @@ class _CommonlyUsedMenuState extends State<CommonlyUsedMenu> {
       width: double.infinity,
       padding: const EdgeInsets.symmetric(horizontal: 10.0),
       child: Container(
-        color: BackgroundStyles.secondaryBackground.withOpacity(0.5),
+        width: double.infinity,
+        height: 75,
+        decoration: BoxDecoration(
+          color: BackgroundStyles.secondaryBackground.withOpacity(0.5),
+          borderRadius: BorderRadius.circular(16),
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -64,7 +72,7 @@ class CommonlyUsedMenuItem extends StatelessWidget {
         const SizedBox(height: 4),
         Text(
           menuItemProps.label,
-          style: const TextStyle(fontSize: 16, color: TextStyles.whiteColor),
+          style: const TextStyle(fontSize: 12, color: TextStyles.fontColor1),
         ),
       ],
     );
