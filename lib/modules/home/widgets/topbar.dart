@@ -16,9 +16,21 @@ class _TopbarState extends State<Topbar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
       color: BackgroundStyles.primaryBackground,
-      child: const Avatar(),
+      child: const Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Avatar(),
+          Row(
+            children: [
+              ScanCode(),
+              SizedBox(width: 8),
+              Message(),
+            ],
+          )
+        ],
+      ),
     );
   }
 }
@@ -45,6 +57,47 @@ class Avatar extends StatelessWidget {
           style: TextStyle(fontSize: 14, color: TextStyles.whiteColor),
         ),
       ],
+    );
+  }
+}
+
+//扫描
+class ScanCode extends StatefulWidget {
+  const ScanCode({Key? key}) : super(key: key);
+
+  @override
+  _ScanCodeState createState() => _ScanCodeState();
+}
+
+class _ScanCodeState extends State<ScanCode> {
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        print('Image tapped!');
+      },
+      child: Image.asset(
+        'assets/images/icon/scan_code_icon.png',
+        width: 20,
+      ),
+    );
+  }
+}
+
+// 消息
+class Message extends StatelessWidget {
+  const Message({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        print('Image tapped!');
+      },
+      child: Image.asset(
+        'assets/images/icon/message_icon.png',
+        width: 20,
+      ),
     );
   }
 }
