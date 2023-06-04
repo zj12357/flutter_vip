@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:vip_app/shared/styles/background_style.dart';
+import 'package:vip_app/shared/widgets/qr_scanner.dart';
 import '/shared/styles/text_style.dart';
 
 class Topbar extends StatefulWidget implements PreferredSizeWidget {
@@ -75,6 +77,7 @@ class _ScanCodeState extends State<ScanCode> {
     return GestureDetector(
       onTap: () {
         print('Image tapped!');
+        Get.to(const QrScanner()); //跳转到扫码页面
       },
       child: Image.asset(
         'assets/images/icon/scan_code_icon.png',
